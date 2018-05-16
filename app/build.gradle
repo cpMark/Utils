@@ -4,8 +4,8 @@ group='com.github.cpMark'
 android {
     compileSdkVersion 27
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 27
+        minSdkVersion 14
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
