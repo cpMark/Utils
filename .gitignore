@@ -8,3 +8,8 @@
 /build
 /captures
 .externalNativeBuild
+/gradle
+/.idea
+/app/src/androidTest
+/app/src/test
+/okhttputils
