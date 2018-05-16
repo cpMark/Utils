@@ -6,7 +6,6 @@
 /build
 /captures
 .externalNativeBuild
-/gradle
 /app/src/androidTest
 /app/src/test
 /okhttputils
