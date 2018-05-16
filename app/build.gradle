@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.cpMark'
 
 android {
     compileSdkVersion 27
@@ -25,6 +27,6 @@ dependencies {
     //网络请求相关 end
 
     //json格式数据转换start
-    compile 'com.google.code.gson:gson:2.8.4'
+    implementation 'com.google.code.gson:gson:2.8.4'
     //json格式数据转换end
 }
