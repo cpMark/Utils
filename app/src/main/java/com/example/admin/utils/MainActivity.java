@@ -1,24 +1,9 @@
 package com.example.admin.utils;
 
-import android.annotation.SuppressLint;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.widget.Toast;
 
-import com.example.admin.utils.aes.AESUtils;
-import com.example.admin.utils.log.LogUtils;
-import com.example.admin.utils.network.NetworkManager;
-import com.example.admin.utils.network.callback.StringCallBack;
-import com.google.gson.Gson;
-
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
-import okhttp3.Call;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private static final String TAG = "MainActivity";
 
