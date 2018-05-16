@@ -20,7 +20,7 @@
 
 ```
 	dependencies {
-		implementation 'com.github.cpMark:Utils:v0.0.5'
+		implementation 'com.github.cpMark:Utils:v0.0.6'
 	}
 ```
 
