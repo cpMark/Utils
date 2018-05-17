@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Utils</string>
     <string name="btn_download_pic">下载图片</string>
+    <string name="exception_presenter_is_null">Presenter is null!!</string>
 </resources>
