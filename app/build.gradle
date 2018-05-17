@@ -28,4 +28,8 @@ dependencies {
     //json格式数据转换start
     implementation 'com.google.code.gson:gson:2.8.4'
     //json格式数据转换end
+
+    //recyclerview start
+    implementation 'com.android.support:recyclerview-v7:25.0.0'
+    //recyclerview end
 }

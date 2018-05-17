@@ -5,7 +5,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.dz3688.www.util.recycler_view.holder.CommonViewHolder;
+
+import com.example.admin.utils.recycler_view.holder.CommonViewHolder;
 
 import java.util.List;
 

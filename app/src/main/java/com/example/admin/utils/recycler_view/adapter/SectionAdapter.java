@@ -3,9 +3,9 @@ package com.example.admin.utils.recycler_view.adapter;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 
-import com.dz3688.www.util.recycler_view.holder.CommonViewHolder;
-import com.dz3688.www.util.recycler_view.support.MultiItemTypeSupport;
-import com.dz3688.www.util.recycler_view.support.SectionSupport;
+import com.example.admin.utils.recycler_view.holder.CommonViewHolder;
+import com.example.admin.utils.recycler_view.support.MultiItemTypeSupport;
+import com.example.admin.utils.recycler_view.support.SectionSupport;
 
 import java.util.LinkedHashMap;
 import java.util.List;
