@@ -1,4 +1,4 @@
-package com.example.admin.utils.mvp.impl.support;
+package com.example.admin.utils.mvp.base.support;
 
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;

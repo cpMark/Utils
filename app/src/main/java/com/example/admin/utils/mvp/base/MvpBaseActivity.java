@@ -1,16 +1,13 @@
-package com.example.admin.utils.mvp.impl;
+package com.example.admin.utils.mvp.base;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.example.admin.utils.R;
-import com.example.admin.utils.mvp.MvpModel;
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;
-import com.example.admin.utils.mvp.impl.MvpBasePresenter;
-import com.example.admin.utils.mvp.impl.support.ActivityLifecycleDelegate;
-import com.example.admin.utils.mvp.impl.support.ActivityLifecycleDelegateImpl;
-import com.example.admin.utils.mvp.impl.support.BindAndUnbindDelegate;
+import com.example.admin.utils.mvp.base.support.ActivityLifecycleDelegate;
+import com.example.admin.utils.mvp.base.support.ActivityLifecycleDelegateImpl;
+import com.example.admin.utils.mvp.base.support.BindAndUnbindDelegate;
 
 /**
  * function：抽象基类，实现了公共逻辑

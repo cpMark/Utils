@@ -1,6 +1,5 @@
-package com.example.admin.utils.mvp.impl;
+package com.example.admin.utils.mvp.base;
 
-import com.example.admin.utils.mvp.MvpModel;
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;
 
