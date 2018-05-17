@@ -13,6 +13,11 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
+/**
+ * function：Md5加密工具类
+ * author by cpMark
+ * create on 2018/5/15.
+ */
 public class Md5Util {
 
 	public static String getMD5(String info) {

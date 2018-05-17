@@ -28,7 +28,7 @@ public class MvpLceActivity<D, V extends MvpView, P extends MvpPresenter<V>>
     }
 
     /**
-     *
+     * 加载Lce布局
      */
     @Override
     public void onContentChanged() {

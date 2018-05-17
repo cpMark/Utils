@@ -41,13 +41,13 @@ public class MvpLceViewImpl<D> implements MvpLceView<D> {
             throw new NullPointerException("root view 不能给为空");
         }
         if (mLoadingView == null){
-            this.mLoadingView = rootView.findViewById(R.id.loadingView);
+            mLoadingView = rootView.findViewById(R.id.loadingView);
         }
         if (mContentView == null){
-            this.mContentView = rootView.findViewById(R.id.contentView);
+            mContentView = rootView.findViewById(R.id.contentView);
         }
         if (mErrorView == null){
-            this.mErrorView = rootView.findViewById(R.id.errorView);
+            mErrorView = rootView.findViewById(R.id.errorView);
         }
         if (mLoadingView == null){
             throw new NullPointerException("mLoadingView 不能给为空");
