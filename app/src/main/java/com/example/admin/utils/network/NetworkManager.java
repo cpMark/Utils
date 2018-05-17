@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 
 import com.example.admin.utils.network.builder.GetBuilder;
+import com.example.admin.utils.network.builder.HeadBuilder;
 import com.example.admin.utils.network.builder.PostFileBuilder;
 import com.example.admin.utils.network.builder.PostFormBuilder;
 import com.example.admin.utils.network.builder.PostStringBuilder;
@@ -104,6 +105,10 @@ public class NetworkManager {
 
     public static PostFormBuilder post() {
         return new PostFormBuilder();
+    }
+
+    public static HeadBuilder head() {
+        return new HeadBuilder();
     }
 
     /** --------------------------------------------  对应各种请求的Builder end  --------------------------------------------*/
@@ -207,5 +212,12 @@ public class NetworkManager {
 
     public ExecutorDelivery getDelivery() {
         return mExecutorDelivery;
+    }
+
+    public static class METHOD {
+        public static final String HEAD = "HEAD";
+        public static final String DELETE = "DELETE";
+        public static final String PUT = "PUT";
+        public static final String PATCH = "PATCH";
     }
 }
