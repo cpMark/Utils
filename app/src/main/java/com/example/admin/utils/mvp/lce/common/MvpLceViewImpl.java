@@ -1,11 +1,11 @@
-package com.example.admin.utils.mvp.lce.impl;
+package com.example.admin.utils.mvp.lce.common;
 
 import android.view.View;
 
 import com.example.admin.utils.R;
 import com.example.admin.utils.mvp.lce.ILceAnimator;
 import com.example.admin.utils.mvp.lce.MvpLceView;
-import com.example.admin.utils.mvp.lce.impl.animator.DefaultLceAnimator;
+import com.example.admin.utils.mvp.lce.common.animator.DefaultLceAnimator;
 
 /**
  * function：Lce的目标对象（MvpLceView的实现类）

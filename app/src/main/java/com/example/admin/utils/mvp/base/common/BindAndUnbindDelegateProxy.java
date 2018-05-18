@@ -1,4 +1,4 @@
-package com.example.admin.utils.mvp.base.support;
+package com.example.admin.utils.mvp.base.common;
 
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;
@@ -43,15 +43,15 @@ public class BindAndUnbindDelegateProxy<V extends MvpView, P extends MvpPresente
     }
 
     @Override
-    public V getView() {
-        return mBindAndUnbindDelegate.getView();
+    public V getMvpView() {
+        return mBindAndUnbindDelegate.getMvpView();
     }
 
     /**
      * 绑定V和P层
      */
     public void attachView(){
-        getPresenter().attachView(getView());
+        getPresenter().attachView(getMvpView());
     }
 
     /**

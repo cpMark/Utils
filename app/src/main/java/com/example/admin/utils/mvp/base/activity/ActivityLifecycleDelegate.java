@@ -1,4 +1,4 @@
-package com.example.admin.utils.mvp.base.support;
+package com.example.admin.utils.mvp.base.activity;
 
 import android.os.Bundle;
 

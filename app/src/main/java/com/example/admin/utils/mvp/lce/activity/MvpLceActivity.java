@@ -1,13 +1,14 @@
-package com.example.admin.utils.mvp.lce.impl;
+package com.example.admin.utils.mvp.lce.activity;
 
 import android.view.View;
 
 import com.example.admin.utils.R;
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;
-import com.example.admin.utils.mvp.base.MvpBaseActivity;
+import com.example.admin.utils.mvp.base.activity.MvpBaseActivity;
 import com.example.admin.utils.mvp.lce.ILceAnimator;
 import com.example.admin.utils.mvp.lce.MvpLceView;
+import com.example.admin.utils.mvp.lce.common.MvpLceViewImpl;
 
 /**
  * function：Lce的代理对象（持有目标对象MvpLceViewImpl的引用）

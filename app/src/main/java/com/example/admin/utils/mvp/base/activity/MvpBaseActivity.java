@@ -1,16 +1,14 @@
-package com.example.admin.utils.mvp.base;
+package com.example.admin.utils.mvp.base.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;
-import com.example.admin.utils.mvp.base.support.ActivityLifecycleDelegate;
-import com.example.admin.utils.mvp.base.support.ActivityLifecycleDelegateImpl;
-import com.example.admin.utils.mvp.base.support.BindAndUnbindDelegate;
+import com.example.admin.utils.mvp.base.common.BindAndUnbindDelegate;
 
 /**
- * function：抽象基类，实现了公共逻辑
+ * function：抽象Activity基类，实现了公共逻辑
  * <p>
  * Activity生命周期的代理对象（持有目标对象的引用）
  * V层和P层绑定的目标对象
@@ -55,7 +53,7 @@ public class MvpBaseActivity<V extends MvpView, P extends MvpPresenter<V>>
     }
 
     @Override
-    public V getView() {
+    public V getMvpView() {
         return (V) this;
     }
 

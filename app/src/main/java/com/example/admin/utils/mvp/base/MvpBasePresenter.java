@@ -12,7 +12,7 @@ public class MvpBasePresenter<V extends MvpView> implements MvpPresenter<V> {
 
     V mView;
 
-    public V getView(){
+    public V getMvpView(){
         return mView;
     }
 

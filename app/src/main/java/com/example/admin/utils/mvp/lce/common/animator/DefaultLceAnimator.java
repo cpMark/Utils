@@ -1,4 +1,4 @@
-package com.example.admin.utils.mvp.lce.impl.animator;
+package com.example.admin.utils.mvp.lce.common.animator;
 
 import android.view.View;
 

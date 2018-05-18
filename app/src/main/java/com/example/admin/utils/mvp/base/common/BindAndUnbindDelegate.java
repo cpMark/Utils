@@ -1,4 +1,4 @@
-package com.example.admin.utils.mvp.base.support;
+package com.example.admin.utils.mvp.base.common;
 
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;
@@ -16,6 +16,6 @@ public interface BindAndUnbindDelegate<V extends MvpView, P extends MvpPresenter
 
     void setPresenter(P presenter);
 
-    V getView();
+    V getMvpView();
 
 }
