@@ -6,6 +6,7 @@ import android.view.View;
 import com.example.admin.utils.R;
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;
+import com.example.admin.utils.mvp.support.lce.ILceAnimator;
 import com.example.admin.utils.mvp.support.lce.MvpLceView;
 import com.example.admin.utils.mvp.support.lce.common.MvpLceViewImpl;
 import com.example.admin.utils.mvp.support.lifecycle.fragment.MvpFragment;
@@ -26,6 +27,13 @@ public class MvpLceFragment<D, V extends MvpView, P extends MvpPresenter<V>>
         }
 
         return mMvpLceView;
+    }
+
+    /**
+     *  可设置自定义LCE动画
+     */
+    public void setLceAnimator(ILceAnimator lceAnimator){
+        getMvpLceView().setAnimator(lceAnimator);
     }
 
     @Override

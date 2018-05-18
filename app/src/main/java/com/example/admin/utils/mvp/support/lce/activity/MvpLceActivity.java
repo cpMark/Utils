@@ -49,7 +49,7 @@ public class MvpLceActivity<D, V extends MvpView, P extends MvpPresenter<V>>
      *
      * @param lceAnimator lce动画策略接口的实现类
      */
-    public void setAnimator(ILceAnimator lceAnimator) {
+    public void setLceAnimator(ILceAnimator lceAnimator) {
         getMvpLceView().setAnimator(lceAnimator);
     }
 
