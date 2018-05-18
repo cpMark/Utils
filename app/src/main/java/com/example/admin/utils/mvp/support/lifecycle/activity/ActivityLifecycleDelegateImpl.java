@@ -1,11 +1,11 @@
-package com.example.admin.utils.mvp.base.activity;
+package com.example.admin.utils.mvp.support.lifecycle.activity;
 
 import android.os.Bundle;
 
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;
-import com.example.admin.utils.mvp.base.common.BindAndUnbindDelegate;
-import com.example.admin.utils.mvp.base.common.BindAndUnbindDelegateProxy;
+import com.example.admin.utils.mvp.support.lifecycle.common.BindAndUnbindDelegate;
+import com.example.admin.utils.mvp.support.lifecycle.common.BindAndUnbindDelegateProxy;
 
 /**
  * function：

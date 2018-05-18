@@ -1,8 +1,8 @@
-package com.example.admin.utils.mvp.lce.common.animator;
+package com.example.admin.utils.mvp.support.lce.common.animator;
 
 import android.view.View;
 
-import com.example.admin.utils.mvp.lce.ILceAnimator;
+import com.example.admin.utils.mvp.support.lce.ILceAnimator;
 
 /**
  * function：Lce策略接口的默认实现类，当用户没有传入自定义策略时使用

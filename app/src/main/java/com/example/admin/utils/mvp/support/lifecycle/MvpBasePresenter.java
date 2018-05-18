@@ -1,4 +1,4 @@
-package com.example.admin.utils.mvp.base;
+package com.example.admin.utils.mvp.support.lifecycle;
 
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;

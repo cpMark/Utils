@@ -1,4 +1,4 @@
-package com.example.admin.utils.mvp.base.fragment;
+package com.example.admin.utils.mvp.support.lifecycle.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -6,8 +6,8 @@ import android.view.View;
 
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;
-import com.example.admin.utils.mvp.base.common.BindAndUnbindDelegate;
-import com.example.admin.utils.mvp.base.common.BindAndUnbindDelegateProxy;
+import com.example.admin.utils.mvp.support.lifecycle.common.BindAndUnbindDelegate;
+import com.example.admin.utils.mvp.support.lifecycle.common.BindAndUnbindDelegateProxy;
 
 /**
  * function：

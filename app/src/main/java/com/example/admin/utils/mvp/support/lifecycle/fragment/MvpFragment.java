@@ -1,6 +1,5 @@
-package com.example.admin.utils.mvp.base.fragment;
+package com.example.admin.utils.mvp.support.lifecycle.fragment;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -8,7 +7,7 @@ import android.view.View;
 
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;
-import com.example.admin.utils.mvp.base.common.BindAndUnbindDelegate;
+import com.example.admin.utils.mvp.support.lifecycle.common.BindAndUnbindDelegate;
 
 /**
  * function：抽象Fragment基类，实现了公共逻辑
@@ -19,7 +18,7 @@ import com.example.admin.utils.mvp.base.common.BindAndUnbindDelegate;
  * author by admin
  * create on 2018/5/18.
  */
-public class MvpBaseFragment <V extends MvpView, P extends MvpPresenter<V>>
+public class MvpFragment<V extends MvpView, P extends MvpPresenter<V>>
         extends Fragment
         implements MvpView,BindAndUnbindDelegate<V,P> {
 

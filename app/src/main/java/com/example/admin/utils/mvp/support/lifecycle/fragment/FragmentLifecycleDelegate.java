@@ -1,4 +1,4 @@
-package com.example.admin.utils.mvp.base.fragment;
+package com.example.admin.utils.mvp.support.lifecycle.fragment;
 
 import android.content.Context;
 import android.os.Bundle;

@@ -1,22 +1,22 @@
-package com.example.admin.utils.mvp.lce.activity;
+package com.example.admin.utils.mvp.support.lce.fragment;
 
+import android.os.Bundle;
 import android.view.View;
 
 import com.example.admin.utils.R;
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;
-import com.example.admin.utils.mvp.base.activity.MvpBaseActivity;
-import com.example.admin.utils.mvp.lce.ILceAnimator;
-import com.example.admin.utils.mvp.lce.MvpLceView;
-import com.example.admin.utils.mvp.lce.common.MvpLceViewImpl;
+import com.example.admin.utils.mvp.support.lce.MvpLceView;
+import com.example.admin.utils.mvp.support.lce.common.MvpLceViewImpl;
+import com.example.admin.utils.mvp.support.lifecycle.fragment.MvpFragment;
 
 /**
  * function：Lce的代理对象（持有目标对象MvpLceViewImpl的引用）
  * author by admin
- * create on 2018/5/17.
+ * create on 2018/5/18.
  */
-public class MvpLceActivity<D, V extends MvpView, P extends MvpPresenter<V>>
-        extends MvpBaseActivity<V, P> implements MvpLceView<D>, View.OnClickListener {
+public class MvpLceFragment<D, V extends MvpView, P extends MvpPresenter<V>>
+        extends MvpFragment<V, P> implements MvpLceView<D>, View.OnClickListener{
 
     private MvpLceViewImpl<D> mMvpLceView;
 
@@ -28,30 +28,19 @@ public class MvpLceActivity<D, V extends MvpView, P extends MvpPresenter<V>>
         return mMvpLceView;
     }
 
-    /**
-     * 加载Lce布局
-     */
     @Override
-    public void onContentChanged() {
-        super.onContentChanged();
-        getMvpLceView().initView(findViewById(R.id.rootView));
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        getMvpLceView().initView(view.findViewById(R.id.rootView));
         getMvpLceView().setOnClickErrorListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        //重新加载
         loadData(false);
     }
 
-    /**
-     * 设置lce动画，不设置会有默认效果
-     *
-     * @param lceAnimator lce动画策略接口的实现类
-     */
-    public void setAnimator(ILceAnimator lceAnimator) {
-        getMvpLceView().setAnimator(lceAnimator);
-    }
+    /** --------------------------------------------  Lce目标接口的实现（调用目标对象的实现）start  --------------------------------------------*/
 
     @Override
     public void loadData(boolean isPullToRefresh) {
@@ -70,11 +59,13 @@ public class MvpLceActivity<D, V extends MvpView, P extends MvpPresenter<V>>
 
     @Override
     public void bindData(D data, boolean isPullToRefresh) {
-        getMvpLceView().bindData(data, isPullToRefresh);
+        getMvpLceView().bindData(data,isPullToRefresh);
     }
 
     @Override
     public void showError(boolean isPullToRefresh) {
         getMvpLceView().showError(isPullToRefresh);
     }
+
+    /** --------------------------------------------  Lce目标接口的实现（调用目标对象的实现）end  --------------------------------------------*/
 }
