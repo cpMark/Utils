@@ -45,13 +45,15 @@ public class ActivityLifecycleDelegateImpl<V extends MvpView, P extends MvpPrese
         if(savedInstanceState != null && mKeepPresenterInstance){
             mActivityId = savedInstanceState.getString(KEY_VIEW_ID);
 
+            //mActivityId不为null,说明有缓存了，不做任何处理
             if(mActivityId == null){
-                //说明不存在，创建P层
+                //初始化缓存
                 presenter = initPresenterCache();
             }
+
         }else{
-            //不缓存，直接调用函数创建即可
-            presenter = createPresenterInstance();
+            //没有缓存，直接调用函数创建即可，并根据初始化标识mKeepPresenterInstance决定是否缓存
+            presenter = initPresenterCache();
         }
 
         //绑定
@@ -115,14 +117,19 @@ public class ActivityLifecycleDelegateImpl<V extends MvpView, P extends MvpPrese
      */
     private P initPresenterCache(){
         P presenter = createPresenterInstance();
+        addPresenterToCache(presenter);
+        return presenter;
+    }
 
+    /**
+     *  添加Presenter实例到缓存中
+     */
+    private void addPresenterToCache(P presenter) {
         if(mKeepPresenterInstance){
             //通过PresenterManager来初始化缓存
             mActivityId = UUID.randomUUID().toString();
             PresenterManager.putPresenter(mActivity, mActivityId,presenter);
         }
-
-        return presenter;
     }
 
     /**
