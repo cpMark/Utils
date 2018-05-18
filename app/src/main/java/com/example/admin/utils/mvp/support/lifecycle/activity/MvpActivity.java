@@ -28,7 +28,7 @@ public class MvpActivity<V extends MvpView, P extends MvpPresenter<V>>
      */
     public ActivityLifecycleDelegate<V, P> getActivityLifecycleDelegate() {
         if (mActivityLifecycleDelegate == null) {
-            mActivityLifecycleDelegate = new ActivityLifecycleDelegateImpl(this);
+            mActivityLifecycleDelegate = new ActivityLifecycleDelegateImpl(this,this,true);
         }
         return mActivityLifecycleDelegate;
     }

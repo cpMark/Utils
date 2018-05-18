@@ -199,6 +199,9 @@ public class PresenterManager {
         mRealPresenterCacheMap.clear();
     }
 
+    /**
+     *  将Presenter添加到对应Activity的缓存中
+     */
     public static void putPresenter(Activity activity, String activityId, MvpPresenter<?> presenter){
         if (activity == null) {
             throw new NullPointerException("Activity is null,please check!!!");
@@ -209,6 +212,9 @@ public class PresenterManager {
         activityPresenterCache.putPresenter(activityId,presenter);
     }
 
+    /**
+     *  移除对应Activity的缓存
+     */
     public static void remove(Activity activity,String activityId){
         if (activity == null) {
             throw new NullPointerException("Activity is null,please check!!!");

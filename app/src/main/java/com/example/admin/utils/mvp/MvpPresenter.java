@@ -24,4 +24,9 @@ public interface MvpPresenter<V extends MvpView> {
      */
     void detachView();
 
+    /**
+     * 销毁功能(例如：网络请求停止、数据库查询停止等等...)
+     */
+    void destory();
+
 }

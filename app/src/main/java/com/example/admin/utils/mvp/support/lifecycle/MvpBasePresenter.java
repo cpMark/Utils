@@ -25,4 +25,9 @@ public class MvpBasePresenter<V extends MvpView> implements MvpPresenter<V> {
     public void detachView(){
         mView = null;
     }
+
+    @Override
+    public void destory() {
+
+    }
 }
