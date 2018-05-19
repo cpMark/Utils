@@ -1,13 +1,10 @@
 package com.example.admin.utils.mvp.support.cache;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.ContextWrapper;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.ArrayMap;
 
 import com.example.admin.utils.mvp.MvpPresenter;
 
@@ -120,9 +117,25 @@ public class PresenterManager {
     }
 
     /**
-     * 通过Activity实例获取缓存实例
+     *  简单版本
      */
     static ActivityPresenterCache getActivityPresenterCache(Activity activity) {
+        if (activity == null) {
+            throw new NullPointerException("Activity is null,please check!!!");
+        }
+
+        String activityId = mActivityIdCacheMap.get(activity);
+        if (activityId == null) {
+            return null;
+        }
+
+        return mRealPresenterCacheMap.get(activityId);
+    }
+
+    /**
+     * 通过Activity实例获取缓存实例
+     */
+    static ActivityPresenterCache getActivityPresenterCacheWithCreate(Activity activity) {
         if (activity == null) {
             throw new NullPointerException("Activity is null,please check!!!");
         }
@@ -208,7 +221,7 @@ public class PresenterManager {
         }
 
         //通过activity，获取其缓存实例
-        ActivityPresenterCache activityPresenterCache = getActivityPresenterCache(activity);
+        ActivityPresenterCache activityPresenterCache = getActivityPresenterCacheWithCreate(activity);
         activityPresenterCache.putPresenter(activityId,presenter);
     }
 

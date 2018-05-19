@@ -93,10 +93,11 @@ public class ActivityLifecycleDelegateImpl<V extends MvpView, P extends MvpPrese
         mBindAndUnbindDelegateProxy.detachView();
 
         //P层根据标识，判断是否要销毁
-        if(!retainPresenterInstance){
+        if(retainPresenterInstance){
             mBindAndUnbindDelegateProxy.getPresenter().destory();
         }
 
+        //存在实例，并且id不为空，需要销毁实例
         if (!retainPresenterInstance && mActivityId != null){
             PresenterManager.remove(mActivity, mActivityId);
         }
@@ -104,8 +105,8 @@ public class ActivityLifecycleDelegateImpl<V extends MvpView, P extends MvpPrese
     }
 
     /**
-     * 是否存在这个实例
-     * (不存在返回false，存在返回true)
+     * Presenter实例和Activity实例是否都存在？
+     * (不存在返回false，没必要销毁；存在返回true，需要销毁)
      */
     private boolean retainPresenterInstance(boolean keepPresenterInstance, Activity activity){
         return keepPresenterInstance &&
