@@ -21,7 +21,7 @@ public class MvpActivity<V extends MvpView, P extends MvpPresenter<V>>
         implements MvpView,BindAndUnbindDelegate<V,P> {
 
 
-    private ActivityLifecycleDelegate<V, P> mActivityLifecycleDelegate;
+    protected ActivityLifecycleDelegate<V, P> mActivityLifecycleDelegate;
 
     /**
      * 通过使用时，不存在创建的方式来持有目标对象

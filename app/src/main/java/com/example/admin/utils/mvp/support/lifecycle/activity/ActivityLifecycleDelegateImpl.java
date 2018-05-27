@@ -22,15 +22,26 @@ public class ActivityLifecycleDelegateImpl<V extends MvpView, P extends MvpPrese
 
     private static final String KEY_VIEW_ID = "key_view_id";
 
-    private Activity mActivity;
+
+    /**
+     *  生命周期绑定代理对象引用声明
+     */
     private BindAndUnbindDelegateProxy<V, P> mBindAndUnbindDelegateProxy;
 
     /**
      * 是否保存Presenter实例的标识
      */
-    private boolean mKeepPresenterInstance;
+    protected boolean mKeepPresenterInstance;
 
-    private String mActivityId;
+    /**
+     *  对应的Activity应用
+     */
+    protected Activity mActivity;
+
+    /**
+     *  Activity的唯一标识
+     */
+    protected String mActivityId;
 
     public ActivityLifecycleDelegateImpl(Activity activity, BindAndUnbindDelegate delegate, boolean keepPresenterInstance) {
         mActivity = activity;
@@ -108,7 +119,7 @@ public class ActivityLifecycleDelegateImpl<V extends MvpView, P extends MvpPrese
      * Presenter实例和Activity实例是否都存在？
      * (不存在返回false，没必要销毁；存在返回true，需要销毁)
      */
-    private boolean retainPresenterInstance(boolean keepPresenterInstance, Activity activity){
+    protected boolean retainPresenterInstance(boolean keepPresenterInstance, Activity activity){
         return keepPresenterInstance &&
                 (activity.isChangingConfigurations() || !activity.isFinishing());
     }
@@ -143,5 +154,17 @@ public class ActivityLifecycleDelegateImpl<V extends MvpView, P extends MvpPrese
             throw new NullPointerException("Presenter is null,please check!!!");
         }
         return presenter;
+    }
+
+    /** --------------------------------------------  数据缓存声明周期方法  --------------------------------------------*/
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+
+    }
+
+    @Override
+    public void onPostCreate(Bundle savedInstanceState) {
+
     }
 }

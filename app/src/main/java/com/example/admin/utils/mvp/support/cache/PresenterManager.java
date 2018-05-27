@@ -7,6 +7,7 @@ import android.content.ContextWrapper;
 import android.os.Bundle;
 
 import com.example.admin.utils.mvp.MvpPresenter;
+import com.example.admin.utils.network.utils.ExceptionsUtils;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -117,11 +118,11 @@ public class PresenterManager {
     }
 
     /**
-     *  简单版本
+     * 简单版本
      */
     static ActivityPresenterCache getActivityPresenterCache(Activity activity) {
         if (activity == null) {
-            throw new NullPointerException("Activity is null,please check!!!");
+            ExceptionsUtils.nullPoint("Activity is null,please check!!!");
         }
 
         String activityId = mActivityIdCacheMap.get(activity);
@@ -137,7 +138,7 @@ public class PresenterManager {
      */
     static ActivityPresenterCache getActivityPresenterCacheWithCreate(Activity activity) {
         if (activity == null) {
-            throw new NullPointerException("Activity is null,please check!!!");
+            ExceptionsUtils.nullPoint("Activity is null,please check!!!");
         }
 
         String activityId = mActivityIdCacheMap.get(activity);
@@ -165,11 +166,11 @@ public class PresenterManager {
      */
     public static <P> P getPresenter(Activity activity, String activityId) {
         if (activity == null) {
-            throw new NullPointerException("Activity is null,please check!!!");
+            ExceptionsUtils.nullPoint("Activity is null,please check!!!");
         }
 
         if (activityId == null) {
-            throw new NullPointerException("ActivityId is null,please check!!!");
+            ExceptionsUtils.nullPoint("ActivityId is null,please check!!!");
         }
 
         ActivityPresenterCache activityPresenterCache = getActivityPresenterCache(activity);
@@ -181,7 +182,7 @@ public class PresenterManager {
      */
     public static Activity getActivity(Context context) {
         if (context == null) {
-            throw new NullPointerException("Context instance is null,please check!!!");
+            ExceptionsUtils.nullPoint("Context instance is null,please check!!!");
         }
 
         if (context instanceof Activity) {
@@ -213,28 +214,60 @@ public class PresenterManager {
     }
 
     /**
-     *  将Presenter添加到对应Activity的缓存中
+     * 将Presenter添加到对应Activity的缓存中
      */
-    public static void putPresenter(Activity activity, String activityId, MvpPresenter<?> presenter){
+    public static void putPresenter(Activity activity, String activityId, MvpPresenter<?> presenter) {
         if (activity == null) {
-            throw new NullPointerException("Activity is null,please check!!!");
+            ExceptionsUtils.nullPoint("Activity is null,please check!!!");
         }
 
         //通过activity，获取其缓存实例
         ActivityPresenterCache activityPresenterCache = getActivityPresenterCacheWithCreate(activity);
-        activityPresenterCache.putPresenter(activityId,presenter);
+        activityPresenterCache.putPresenter(activityId, presenter);
     }
 
     /**
-     *  移除对应Activity的缓存
+     * 移除对应Activity的缓存
      */
-    public static void remove(Activity activity,String activityId){
+    public static void remove(Activity activity, String activityId) {
         if (activity == null) {
-            throw new NullPointerException("Activity is null,please check!!!");
+            ExceptionsUtils.nullPoint("Activity is null,please check!!!");
         }
 
         ActivityPresenterCache activityPresenterCache = getActivityPresenterCache(activity);
         activityPresenterCache.remove(activityId);
     }
+
+    /**
+     * --------------------------------------------  备忘录模式：管理器（备份ViewState）start  --------------------------------------------
+     */
+
+    public static <VS> VS getViewState(Activity activity, String activityId) {
+        if (activity == null) {
+            ExceptionsUtils.nullPoint("Activity is null,please check!!!");
+        }
+
+        if (activityId == null) {
+            ExceptionsUtils.nullPoint("ActivityId is null,please check!!!");
+        }
+
+        ActivityPresenterCache activityPresenterCache = getActivityPresenterCache(activity);
+        return activityPresenterCache == null ? null : (VS)activityPresenterCache.getViewState(activityId);
+    }
+
+    public static void putViewState(Activity activity, String activityId, Object viewState) {
+        if (activity == null) {
+            ExceptionsUtils.nullPoint("Activity is null,please check!!!");
+        }
+
+        if (activityId == null) {
+            ExceptionsUtils.nullPoint("ActivityId is null,please check!!!");
+        }
+
+        ActivityPresenterCache activityPresenterCache = getActivityPresenterCacheWithCreate(activity);
+        activityPresenterCache.putViewState(activityId, viewState);
+    }
+
+    /** --------------------------------------------  备忘录模式：管理器（备份ViewState）end  --------------------------------------------*/
 
 }

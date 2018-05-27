@@ -1,6 +1,7 @@
 package com.example.admin.utils.mvp.support.base.activity;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 
 import com.example.admin.utils.mvp.MvpPresenter;
 import com.example.admin.utils.mvp.MvpView;

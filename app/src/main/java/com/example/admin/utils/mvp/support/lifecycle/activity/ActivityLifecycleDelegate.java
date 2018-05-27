@@ -25,4 +25,16 @@ public interface ActivityLifecycleDelegate<V extends MvpView,P extends MvpPresen
     void onStop();
 
     void onDestroy();
+
+    /** --------------------------------------------  新增数据缓存的生命周期方法  --------------------------------------------*/
+
+    /**
+     *  保存缓存对象
+     */
+    void onSaveInstanceState(Bundle outState);
+
+    /**
+     *  创建缓存对象
+     */
+    void onPostCreate(Bundle savedInstanceState);
 }

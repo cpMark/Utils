@@ -17,4 +17,24 @@ public class ExceptionsUtils {
         throw new IllegalArgumentException(String.format(msg, params));
     }
 
+    /**
+     * 空指针异常
+     *
+     * @param msg    异常信息
+     * @param params 可变数组，用于传入具体参数
+     */
+    public static void nullPoint(String msg, Object... params) {
+        throw new NullPointerException(String.format(msg, params));
+    }
+
+    /**
+     * 不合法的状态异常
+     *
+     * @param msg    异常信息
+     * @param params 可变数组，用于传入具体参数
+     */
+    public static void illegalState(String msg, Object... params) {
+        throw new IllegalStateException(String.format(msg, params));
+    }
+
 }
